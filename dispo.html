@@ -6,43 +6,72 @@
     <title>Disponibilités - Mon Gîte</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .calendar-wrapper {
+        /* Optimisation pour que le calendrier soit bien visible sur mobile */
+        .calendar-container {
             position: relative;
-            padding-bottom: 75%; /* Ratio pour mobile */
+            padding-bottom: 75%; /* Ratio 4:3 */
             height: 0;
             overflow: hidden;
             border: 1px solid #ddd;
             border-radius: 8px;
+            margin: 20px 0;
         }
-        .calendar-wrapper iframe {
+        .calendar-container iframe {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .contact-box {
+            background: #f0f7ff;
+            padding: 20px;
+            border-left: 5px solid #007bff;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        .btn-contact {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <nav>
         <a href="index.html">Description</a> | 
-        <a href="dispo.html">Disponibilité & Réservation</a>
+        <a href="dispo.html"><b>Disponibilité & Réservation</b></a>
     </nav>
 
+    <header>
+        <h1>Disponibilités du Gîte</h1>
+        <p>Le calendrier ci-dessous regroupe les réservations Airbnb et Booking en temps réel.</p>
+    </header>
+
     <section>
-        <h2>Calendrier des disponibilités</h2>
-        <p>Consultez nos dates libres ci-dessous (mis à jour en temps réel) :</p>
-        
-        <div class="calendar-wrapper">
-            <iframe src="https://calendar.google.com/calendar/embed?src=VOTRE_ID_CALENDRIER_GOOGLE&ctz=Europe%2FParis" 
-                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&src=dG45MDhjdTlzazg0ZzJzaTdtYTZwOWxkMTVrdzNnOWFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=bGl2cjZhZTh0bWt2YjYyaDVjbDFmdWcyaXMzZWVjcTVAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%234285F4&color=%23E67C73" 
+            style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <div class="contact-box">
-            <h3>Une question ? Réservez en direct</h3>
-            <p>Téléphone : <strong>[Votre Numéro]</strong></p>
-            <p>Email : <strong>[Votre Email]</strong></p>
-            <p><small>En réservant ici, vous évitez les frais de plateforme !</small></p>
+            <h3>Réserver en direct</h3>
+            <p>Pour éviter les frais de service des plateformes, contactez-nous directement :</p>
+            <p>📞 <strong>06 XX XX XX XX</strong></p>
+            <p>✉️ <strong>votre@email.com</strong></p>
+            <a href="mailto:votre@email.com" class="btn-contact">Envoyer une demande</a>
         </div>
     </section>
+
+    <footer>
+        <p style="margin-top: 40px; font-size: 0.8em; color: #666;">
+            &copy; 2026 - Mon Gîte - Mise à jour automatique des disponibilités
+        </p>
+    </footer>
 </body>
 </html>
