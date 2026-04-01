@@ -4,74 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disponibilités - Mon Gîte</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Optimisation pour que le calendrier soit bien visible sur mobile */
-        .calendar-container {
-            position: relative;
-            padding-bottom: 75%; /* Ratio 4:3 */
-            height: 0;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 20px 0;
+        /* Style général */
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #2c3e50; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f8f9fa; 
         }
-        .calendar-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        
+        /* Navigation */
+        nav { text-align: center; margin-bottom: 40px; padding: 10px; }
+        nav a { 
+            text-decoration: none; 
+            color: #7f8c8d; 
+            font-weight: 600; 
+            margin: 0 15px; 
+            padding: 5px 10px;
+            transition: 0.3s; 
         }
-        .contact-box {
-            background: #f0f7ff;
-            padding: 20px;
-            border-left: 5px solid #007bff;
-            border-radius: 4px;
-            margin-top: 30px;
+        nav a.active { color: #2980b9; border-bottom: 2px solid #2980b9; }
+        nav a:hover { color: #2980b9; }
+
+        /* Conteneur principal */
+        .main-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+            margin-bottom: 30px; 
         }
-        .btn-contact {
-            display: inline-block;
-            background: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 10px;
+        
+        h1 { text-align: center; color: #2c3e50; margin-top: 0; }
+        .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
+
+        /* Conteneur du calendrier */
+        .calendar-wrapper { 
+            border: 1px solid #eee; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            background: #fff;
+        }
+
+        /* Boîte de contact */
+        .contact-footer { 
+            background: #2980b9; 
+            color: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+        }
+        .contact-footer h2 { margin-top: 0; color: white; }
+        .price-badge { 
+            display: inline-block; 
+            background: #27ae60; 
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-size: 0.9em; 
+            margin-bottom: 15px; 
+        }
+        .phone { font-size: 1.5em; display: block; margin: 10px 0; }
+        
+        @media (max-width: 600px) {
+            .main-card { padding: 15px; }
+            iframe { height: 500px; } /* Plus court sur mobile pour faciliter le scroll */
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="index.html">Description</a> | 
-        <a href="dispo.html"><b>Disponibilité & Réservation</b></a>
+        <a href="index.html">Description</a>
+        <a href="dispo.html" class="active">Disponibilités & Réservation</a>
     </nav>
 
-    <header>
-        <h1>Disponibilités du Gîte</h1>
-        <p>Le calendrier ci-dessous regroupe les réservations Airbnb et Booking en temps réel.</p>
-    </header>
-
-    <section>
-        <div class="calendar-container">
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FParis&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&src=dG45MDhjdTlzazg0ZzJzaTdtYTZwOWxkMTVrdzNnOWFAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=bGl2cjZhZTh0bWt2YjYyaDVjbDFmdWcyaXMzZWVjcTVAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%234285F4&color=%23E67C73" 
-            style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-
-        <div class="contact-box">
-            <h3>Réserver en direct</h3>
-            <p>Pour éviter les frais de service des plateformes, contactez-nous directement :</p>
-            <p>📞 <strong>06 XX XX XX XX</strong></p>
-            <p>✉️ <strong>votre@email.com</strong></p>
-            <a href="mailto:votre@email.com" class="btn-contact">Envoyer une demande</a>
-        </div>
-    </section>
-
-    <footer>
-        <p style="margin-top: 40px; font-size: 0.8em; color: #666;">
-            &copy; 2026 - Mon Gîte - Mise à jour automatique des disponibilités
-        </p>
-    </footer>
-</body>
-</html>
+    <div class="main-card">
+        <h1>Dates de disponibilité</h1>
+        <p class="subtitle">Consultez le planning mis à jour en temps réel via Airbnb et Booking.com</p>
+        
+        <div class="calendar-wrapper">
+            <iframe id="open-web-calendar" 
+                style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" 
+                src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?css=.CALENDAR-INDEX-0%2C%20.CALENDAR-INDEX-0%20.dhx_body%2C%20.CALENDAR-INDEX-0%20.dhx_title%20%20%7B%20background-color%3A%20%23dd4646%3B%20%7D%20%0A&language=fr&url=https%3A%2F%2Fical.booking.com%2Fv1%2Fexport%2Ft%2Fb903d33b-39e6-4e58-abfe-87af0f731a48.ics&url=https%3A%2F%2Fwww.airbnb.fr%2Fcalendar%2Fical%2F1290374906466287292.ics%3Ft%3Dfa6407c5da4841839f83d18f57d27d1b" 
+                sandbox="allow-scripts allow-same-origin allow-top-navigation allow-downloads" 
+                allowTransparency="true" scrolling="no" 
+                frameborder="0" height="775px" width="100%"></iframe>
