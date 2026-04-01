@@ -5,90 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disponibilités - Mon Gîte</title>
     <style>
-        /* Style général */
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: #2c3e50; 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background-color: #f8f9fa; 
-        }
-        
-        /* Navigation */
-        nav { text-align: center; margin-bottom: 40px; padding: 10px; }
-        nav a { 
-            text-decoration: none; 
-            color: #7f8c8d; 
-            font-weight: 600; 
-            margin: 0 15px; 
-            padding: 5px 10px;
-            transition: 0.3s; 
-        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #2c3e50; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
+        nav { text-align: center; margin-bottom: 30px; }
+        nav a { text-decoration: none; color: #7f8c8d; font-weight: 600; margin: 0 15px; padding: 5px 10px; }
         nav a.active { color: #2980b9; border-bottom: 2px solid #2980b9; }
-        nav a:hover { color: #2980b9; }
-
-        /* Conteneur principal */
-        .main-card { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-            margin-bottom: 30px; 
-        }
-        
-        h1 { text-align: center; color: #2c3e50; margin-top: 0; }
-        .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; }
-
-        /* Conteneur du calendrier */
-        .calendar-wrapper { 
-            border: 1px solid #eee; 
-            border-radius: 10px; 
-            overflow: hidden; 
-            background: #fff;
-        }
-
-        /* Boîte de contact */
-        .contact-footer { 
-            background: #2980b9; 
-            color: white; 
-            padding: 40px; 
-            border-radius: 15px; 
-            text-align: center; 
-        }
-        .contact-footer h2 { margin-top: 0; color: white; }
-        .price-badge { 
-            display: inline-block; 
-            background: #27ae60; 
-            padding: 5px 15px; 
-            border-radius: 20px; 
-            font-size: 0.9em; 
-            margin-bottom: 15px; 
-        }
-        .phone { font-size: 1.5em; display: block; margin: 10px 0; }
-        
-        @media (max-width: 600px) {
-            .main-card { padding: 15px; }
-            iframe { height: 500px; } /* Plus court sur mobile pour faciliter le scroll */
-        }
+        .main-card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .calendar-wrapper { border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+        .contact-footer { background: #2980b9; color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 30px; }
+        iframe { width: 100%; border: none; }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="index.html">Description</a>
-        <a href="dispo.html" class="active">Disponibilités & Réservation</a>
+        <a href="dispo.html" class="active">Disponibilités</a>
     </nav>
 
     <div class="main-card">
-        <h1>Dates de disponibilité</h1>
-        <p class="subtitle">Consultez le planning mis à jour en temps réel via Airbnb et Booking.com</p>
+        <h1 style="text-align: center;">Planning des disponibilités</h1>
+        <p style="text-align: center; color: #7f8c8d;">Légende : <span style="color:#dd4646">●</span> Booking | <span style="color:#3498db">●</span> Airbnb</p>
         
         <div class="calendar-wrapper">
             <iframe id="open-web-calendar" 
-                style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" 
-                src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?css=.CALENDAR-INDEX-0%2C%20.CALENDAR-INDEX-0%20.dhx_body%2C%20.CALENDAR-INDEX-0%20.dhx_title%20%20%7B%20background-color%3A%20%23dd4646%3B%20%7D%20%0A&language=fr&url=https%3A%2F%2Fical.booking.com%2Fv1%2Fexport%2Ft%2Fb903d33b-39e6-4e58-abfe-87af0f731a48.ics&url=https%3A%2F%2Fwww.airbnb.fr%2Fcalendar%2Fical%2F1290374906466287292.ics%3Ft%3Dfa6407c5da4841839f83d18f57d27d1b" 
-                sandbox="allow-scripts allow-same-origin allow-top-navigation allow-downloads" 
+                src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?controls=next&amp;controls=previous&amp;controls=today&amp;controls=date&amp;controls=menu&amp;css=.CALENDAR-INDEX-0%2C%20.CALENDAR-INDEX-0%20.dhx_body%2C%20.CALENDAR-INDEX-0%20.dhx_title%20%20%7B%20background-color%3A%20%23dd4646%3B%20%7D%20%0A&amp;language=fr&amp;menu_shows_calendar_descriptions=true&amp;url=https%3A%2F%2Fical.booking.com%2Fv1%2Fexport%2Ft%2Fb903d33b-39e6-4e58-abfe-87af0f731a48.ics&amp;url=https%3A%2F%2Fwww.airbnb.fr%2Fcalendar%2Fical%2F1290374906466287292.ics%3Ft%3Dfa6407c5da4841839f83d18f57d27d1b" 
+                sandbox="allow-scripts allow-same-origin allow-top-navigation" 
                 allowTransparency="true" scrolling="no" 
-                frameborder="0" height="775px" width="100%"></iframe>
+                frameborder="0" height="700px" width="100%"></iframe>
+        </div>
+    </div>
+
+    <div class="contact-footer">
+        <h2>Réserver en direct</h2>
+        <p>Contactez-nous pour éviter les frais de plateforme :</p>
+        <p style="font-size: 1.4em;"><strong>📞 06 XX XX XX XX</strong></p>
+    </div>
+
+</body>
+</html>
