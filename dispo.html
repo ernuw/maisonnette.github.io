@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disponibilités - Mon Gîte</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .calendar-wrapper {
+            position: relative;
+            padding-bottom: 75%; /* Ratio pour mobile */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .calendar-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -14,16 +30,18 @@
 
     <section>
         <h2>Calendrier des disponibilités</h2>
-        <p>Ce calendrier est mis à jour en temps réel via Airbnb et Booking.</p>
+        <p>Consultez nos dates libres ci-dessous (mis à jour en temps réel) :</p>
         
-        <div class="calendar-container">
-            <p><em>[Insérez ici le code d'intégration (iframe) de votre calendrier Google ou outil tiers]</em></p>
+        <div class="calendar-wrapper">
+            <iframe src="https://calendar.google.com/calendar/embed?src=VOTRE_ID_CALENDRIER_GOOGLE&ctz=Europe%2FParis" 
+                    style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
 
         <div class="contact-box">
-            <h3>Réserver directement</h3>
-            <p>Contactez-nous au : <strong>06 XX XX XX XX</strong></p>
-            <p>Ou par email : <strong>votre@email.com</strong></p>
+            <h3>Une question ? Réservez en direct</h3>
+            <p>Téléphone : <strong>[Votre Numéro]</strong></p>
+            <p>Email : <strong>[Votre Email]</strong></p>
+            <p><small>En réservant ici, vous évitez les frais de plateforme !</small></p>
         </div>
     </section>
 </body>
