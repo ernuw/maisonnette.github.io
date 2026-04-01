@@ -81,4 +81,79 @@
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap
+            gap: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .feature-item { padding: 20px; background: var(--light); border-radius: 10px; }
+        .feature-item i { font-size: 2em; display: block; margin-bottom: 10px; }
+
+        /* Bouton d'action */
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .cta-button:hover { background: #1a5276; transform: translateY(-2px); }
+
+        footer { text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.9em; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="active">Le Gîte</a>
+        <a href="dispo.html">Disponibilités</a>
+    </nav>
+
+    <header class="hero">
+        <h1>Maisonnette de charme</h1>
+        <p>Un séjour paisible au cœur de la nature, à deux pas de [Ville/Lieu]</p>
+        <a href="dispo.html" class="cta-button">Vérifier les disponibilités</a>
+    </header>
+
+    <div class="container">
+        
+        <section id="description">
+            <h2>Un havre de paix pour vos vacances</h2>
+            <p>Découvrez notre gîte entièrement rénové, idéal pour les couples ou les petites familles. Profitez d'une vue imprenable, d'un jardin privatif et de tout le confort moderne pour un séjour inoubliable.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">📡<br><strong>Wi-Fi Gratuit</strong></div>
+            <div class="feature-item">☕<br><strong>Cuisine équipée</strong></div>
+            <div class="feature-item">🌳<br><strong>Jardin privatif</strong></div>
+            <div class="feature-item">🚗<br><strong>Parking inclus</strong></div>
+        </section>
+
+        <section class="gallery">
+            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500" alt="Salon">
+            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=500" alt="Chambre">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500" alt="Salle de bain">
+        </section>
+
+        <section id="localisation" style="text-align: center;">
+            <h2>Où nous trouver ?</h2>
+            <p>Nous sommes situés au : <strong>123 Rue de la Paix, 00000 Village Magnifique</strong></p>
+            <p><small>À seulement 15 minutes des plages et 5 minutes des commerces.</small></p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 - Le Gîte de [Votre Nom] - <a href="dispo.html" style="color: #7f8c8d;">Réserver en direct</a>
+    </footer>
+
+</body>
+</html>
