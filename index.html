@@ -3,36 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Gîte - Accueil</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <nav>
-        <a href="index.html">Description</a> | 
-        <a href="dispo.html">Disponibilité & Réservation</a>
-    </nav>
+    <title>Le Gîte de [Nom de votre Gîte] - Bienvenue</title>
+    <style>
+        /* Variables de couleurs */
+        :root {
+            --primary: #2980b9;
+            --secondary: #27ae60;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
 
-    <header>
-        <h1>Bienvenue au Gîte [Nom de votre Gîte]</h1>
-        <p>Un havre de paix situé à [Votre Ville/Région]</p>
-    </header>
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            margin: 0; 
+            background-color: white;
+        }
 
-    <section id="photos">
-        <h2>Le Gîte en images</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/400x300" alt="Salon">
-            <img src="https://via.placeholder.com/400x300" alt="Chambre">
-        </div>
-    </section>
+        /* Navigation */
+        nav { 
+            text-align: center; 
+            padding: 20px; 
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #7f8c8d; 
+            font-weight: 600; 
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        nav a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
 
-    <section id="description">
-        <h2>Description</h2>
-        <p>Profitez d'un séjour inoubliable dans notre gîte tout confort. Capacité : X personnes, Cuisine équipée, Jardin privatif...</p>
-    </section>
+        /* Section Hero (Bannière) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80'); /* REMPLACEZ PAR VOTRE PHOTO */
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2em; max-width: 600px; }
 
-    <section id="localisation">
-        <h2>Localisation</h2>
-        <p>Nous sommes situés à [Adresse].</p>
-        </section>
-</body>
-</html>
+        /* Conteneur principal */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Galerie d'images */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.03); }
+
+        /* Caractéristiques / Équipements */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap
