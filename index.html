@@ -95,6 +95,7 @@
             .carousel-slides { height: 300px !important; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -208,15 +209,14 @@
         setInterval(() => moveSlide(1), 6000);
         updateCarousel();
     </script>
-   <div class="whatsapp-container" style="position:fixed; bottom:20px; right:20px; z-index:1000; display: flex; align-items: center; gap: 10px;">
+  <div class="whatsapp-container" style="position:fixed; bottom:20px; right:20px; z-index:1000; display: flex; align-items: center; gap: 10px;">
     
-    <span style="background-color: white; color: #2c3e50; padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #eee;">
+    <span style="background-color: white; color: #2c3e50; padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #eee; pointer-events: none;">
         Nous contacter par WhatsApp
     </span>
 
-    <a href="https://wa.me/33603276091" target="_blank" style="width:60px; height:60px; background-color:#25d366; color:#FFF; border-radius:50%; text-align:center; font-size:30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
-        <span style="margin-top: 2px;">💬</span>
-    </a>
+    <a href="https://wa.me/33603276091" target="_blank" style="width:60px; height:60px; background-color:#25d366; color:#FFF; border-radius:50%; text-align:center; font-size:35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+        <i class="fab fa-whatsapp"></i> </a>
 </div>
 </body>
 </html>
