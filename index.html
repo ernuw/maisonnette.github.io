@@ -47,7 +47,7 @@
         /* Section Hero (Bannière) */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('splash.jpg'); /* On utilise votre nouveau nom ici */
+                        url('splash.jpg');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -62,10 +62,8 @@
         .hero h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.2em; max-width: 600px; }
 
-        /* Conteneur principal */
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-        /* Caractéristiques / Équipements */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -76,7 +74,6 @@
         .feature-item { padding: 20px; background: var(--light); border-radius: 10px; }
         .feature-item strong { display: block; margin-top: 10px; }
 
-        /* Bouton d'action */
         .cta-button {
             display: inline-block;
             background: var(--primary);
@@ -138,7 +135,78 @@
             <button onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); background: rgba(255,255,255,0.8); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 10;">&#10095;</button>
             
             <div id="dot-container" style="position: absolute; bottom: 15px; width: 100%; text-align: center; z-index: 10;">
-                <span class="dot" onclick="currentDiv(0)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer; transition: 0.3s;"></span>
-                <span class="dot" onclick="currentDiv(1)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer; transition: 0.3s;"></span>
-                <span class="dot" onclick="currentDiv(2)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer; transition: 0.3s;"></span>
-                <span class="dot" onclick="currentDiv(3)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer; transition:
+                <span class="dot" onclick="currentDiv(0)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" onclick="currentDiv(1)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" onclick="currentDiv(2)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer;"></span>
+                <span class="dot" onclick="currentDiv(3)" style="height: 12px; width: 12px; background-color: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; margin: 0 5px; cursor: pointer;"></span>
+            </div>
+        </section>
+
+        <section id="localisation" style="text-align: center; margin-bottom: 40px;">
+            <h2>Où nous trouver ?</h2>
+            <p><strong>149, route de Cajarc, 46260 Saint-Jean de Laur</strong></p>
+            <p><small>(À côté de la mairie - Proche Cajarc et Limogne-en-Quercy)</small></p>
+        </section>
+
+        <section id="contact" style="background: var(--light); padding: 40px; border-radius: 10px;">
+            <h2 style="text-align: center; color: var(--dark);">Nous contacter</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Une question pour Erick Nuwendam ? Envoyez-nous un message direct.</p>
+            
+            <form action="https://formspree.io/f/mpqojdra" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label style="display: block; font-size: 0.9em; font-weight: 600; margin-bottom: 5px;">Objet</label>
+                        <select name="objet" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;">
+                            <option value="Demande d'information">Demande d'information</option>
+                            <option value="Demande de réservation">Demande de réservation</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <label style="display: block; font-size: 0.9em; font-weight: 600; margin-bottom: 5px;">Votre Email</label>
+                        <input type="email" name="email" required placeholder="votre@email.com" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                    </div>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.9em; font-weight: 600; margin-bottom: 5px;">Votre message</label>
+                    <textarea name="message" rows="5" required placeholder="Précisez vos dates ou vos questions..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; font-family: inherit;"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="border: none; cursor: pointer; width: 100%; margin-top: 10px;">
+                    Envoyer ma demande
+                </button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 - Gîte La Maisonnette - Propriétaire : Erick Nuwendam - <a href="dispo.html" style="color: #7f8c8d;">Disponibilités</a>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slidesContainer = document.querySelector('.carousel-slides');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.style.backgroundColor = (index === slideIndex) ? "white" : "rgba(255,255,255,0.5)";
+            });
+        }
+
+        function moveSlide(n) {
+            const total = slidesContainer.children.length;
+            slideIndex = (slideIndex + n + total) % total;
+            updateCarousel();
+        }
+
+        function currentDiv(n) {
+            slideIndex = n;
+            updateCarousel();
+        }
+
+        setInterval(() => moveSlide(1), 6000);
+        updateCarousel();
+    </script>
+</body>
+</html>
