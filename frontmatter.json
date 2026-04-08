@@ -5,6 +5,7 @@
     {
       "path": "./",
       "title": "Site Gîte",
+      "supportedFileTypes": ["html"],
       "exclude": [
         "node_modules",
         ".git"
