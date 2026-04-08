@@ -1,0 +1,7 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.panel.openOnSupportedFile": true,
+  "frontMatter.framework.id": "other",
+  "frontMatter.content.publicFolder": "",
+  "frontMatter.preview.host": "http://localhost:4321"
+}
