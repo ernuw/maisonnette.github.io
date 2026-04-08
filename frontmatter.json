@@ -3,7 +3,9 @@
     {
       "path": "./",
       "title": "Maisonnette",
-      "supportedFileTypes": ["html"]
+      "supportedFileTypes": [
+        "html"
+      ]
     }
   ],
   "frontMatter.content.types": [
@@ -21,5 +23,8 @@
       ]
     }
   ],
-  "frontMatter.framework.id": "other"
+  "frontMatter.framework.id": "other",
+  "frontMatter.preview.host": "http://127.0.0.1:3000/index.html?serverWindowId=49f33e27-369d-4907-9f6a-b03eadc5b70b",
+  "frontMatter.website.host": "https://gite-la-maisonnette-46260.fr/",
+  "frontMatter.git.enabled": true
 }
