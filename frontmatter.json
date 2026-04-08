@@ -1,4 +1,5 @@
 {
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.content.pageFolders": [
     {
       "path": "./",
@@ -12,8 +13,6 @@
     {
       "name": "default",
       "pageBundle": false,
-      "filePrefix": null,
-      "previewPath": null,
       "fields": [
         {
           "title": "Title",
@@ -23,8 +22,5 @@
       ]
     }
   ],
-  "frontMatter.framework.id": "other",
-  "frontMatter.preview.host": "http://127.0.0.1:3000/index.html?serverWindowId=49f33e27-369d-4907-9f6a-b03eadc5b70b",
-  "frontMatter.website.host": "https://gite-la-maisonnette-46260.fr/",
-  "frontMatter.git.enabled": true
+  "frontMatter.framework.id": "other"
 }
