@@ -1,10 +1,12 @@
 {
-   "frontMatter.content.publicFolder": "",
+  "frontMatter.content.publicFolder": "",
   "frontMatter.content.pageFolders": [
     {
       "path": "./",
-      "title": "Site Gîte",
-      "supportedFileTypes": ["html"],
+      "title": "Maisonnette-GitHub-IO",
+      "supportedFileTypes": [
+        "html"
+      ],
       "exclude": [
         "node_modules",
         ".git"
