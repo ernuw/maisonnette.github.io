@@ -1,15 +1,23 @@
 {
-  "frontMatter.content.publicFolder": "",
   "frontMatter.content.pageFolders": [
     {
       "path": "./",
-      "title": "Maisonnette-GitHub-IO",
-      "supportedFileTypes": [
-        "html"
-      ],
-      "exclude": [
-        "node_modules",
-        ".git"
+      "title": "Maisonnette",
+      "supportedFileTypes": ["html"]
+    }
+  ],
+  "frontMatter.content.types": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "filePrefix": null,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        }
       ]
     }
   ],
