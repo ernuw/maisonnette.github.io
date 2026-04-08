@@ -22,5 +22,8 @@
       ]
     }
   ],
-  "frontMatter.framework.id": "other"
+  "frontMatter.framework.id": "other",
+  "frontMatter.preview.host": "http://127.0.0.1:3000/index.html",
+  "frontMatter.website.host": "https://gite-la-maisonnette-46260.fr/",
+  "frontMatter.git.enabled": true
 }
