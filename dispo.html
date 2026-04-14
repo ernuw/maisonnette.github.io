@@ -10,12 +10,29 @@
         nav a { text-decoration: none; color: #7f8c8d; font-weight: 600; margin: 0 15px; padding: 5px 10px; }
         nav a.active { color: #2980b9; border-bottom: 2px solid #2980b9; }
         .main-card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-        .calendar-wrapper { border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+        .calendar-wrapper { border: 1px solid #eee; border-radius: 10px; overflow: hidden; min-height: 200px; display: flex; align-items: center; justify-content: center; background: #fafafa; position: relative; }
         .contact-footer { background: #2980b9; color: white; padding: 30px; border-radius: 15px; text-align: center; margin-top: 30px; }
-        iframe { width: 100%; border: none; }
+        iframe { width: 100%; border: none; display: none; } /* Caché par défaut */
+        
+        /* Style du bouton de déblocage */
+        .unlock-btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+            transition: transform 0.2s, background 0.2s;
+            z-index: 10;
+        }
+        .unlock-btn:hover { background-color: #2471a3; transform: scale(1.05); }
+        .unlock-btn i { margin-right: 10px; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<script defer src="https://cloud.umami.is/script.js" data-website-id="3150cc0f-8575-457c-b101-eca4d8d3af6c"></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3150cc0f-8575-457c-b101-eca4d8d3af6c"></script>
 </head>
 <body>
 
@@ -28,17 +45,22 @@
         <h1 style="text-align: center;">Planning des disponibilités</h1>
         <p style="text-align: center; color: #7f8c8d;">Légende : <span style="color:#3498db">●</span> Réservé</p>
         
-        <div class="calendar-wrapper">
-    <iframe id="open-web-calendar" 
-    style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" 
-    src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?language=fr&url=fernet%3A%2F%2FgAAAAABp3lBWRhktxRgvTwkIR82KvZVmA1mO2Jf4RwFNR7pBNvav8iVDY5vApg_WnPg3t30E-NwHXD1n7eLj9UnB9k01 Qpqz_WbbnpN0xSm_mArEyMYnGYWDKa02Tqxz94oiO0qQol8nDgH7EDuSmrWi8Eq3MF2I6Lpdciaq6d3WQZqMMMa3R3dSK2ryTpR69PKBPUO9NcgFo4nEaw0Oi51QiWRlprzexLnIGhi36ZILCX0o2K8_EvYXQ0MA5Vqusf_fMghTFrc8Rvf3xnmK9lonlcdKd -l1Q726gjeqGVDd-HJOuZG3mVI%3D&url=fernet%3A%2F%2FgAAAAABp3lBYSlp-0iLBXhkwjEBP7H0CsbWVAuwBtwS -7ljqe3tqjSxYQMBWigwszfD8P50CIxP23Rcdxuasy1rAi_4FplF7jzq64zJL3QqrBfoYzbEN-pXK5XNHuZc0Uw0b1kE0ZQD3 vMxDYE8OOwNt-WD5nHw5BzkRMQDJ1AODU4rBl7V4yMZVMtLMWjFDtF4IlIZ2HfZn1S8tLckcOQucYbLzqRXNasMa6_3DFVa5uegRbtsHoJO7CiVHQ7LNdjdgxRPZP1qw5lX8gnV5beva0m078jo-_u4xRQHl10G7-oVP96ExCXOBeWvzeiMy2-rGbMBVGyFS" 
-    sandbox="allow-scripts allow-same-origin allow-top-navigation allow-downloads" 
-    allowTransparency="true" scrolling="no" 
-    frameborder="0" height="775px" width="100%">
-</iframe>
-</div>
+        <div class="calendar-wrapper" id="wrapper">
+            <button class="unlock-btn" id="unlock-trigger" onclick="loadCalendar()">
+                <i class="fas fa-calendar-check"></i> Voir les disponibilités
+            </button>
+
+            <iframe id="open-web-calendar" 
+                style="background:url('https://raw.githubusercontent.com/niccokunzmann/open-web-calendar/master/static/img/loaders/circular-loader.gif') center center no-repeat;" 
+                data-src="https://open-web-calendar.hosted.quelltext.eu/calendar.html?language=fr&url=fernet%3A%2F%2FgAAAAABp3lBWRhktxRgvTwkIR82KvZVmA1mO2Jf4RwFNR7pBNvav8iVDY5vApg_WnPg3t30E-NwHXD1n7eLj9UnB9k01 Qpqz_WbbnpN0xSm_mArEyMYnGYWDKa02Tqxz94oiO0qQol8nDgH7EDuSmrWi8Eq3MF2I6Lpdciaq6d3WQZqMMMa3R3dSK2ryTpR69PKBPUO9NcgFo4nEaw0Oi51QiWRlprzexLnIGhi36ZILCX0o2K8_EvYXQ0MA5Vqusf_fMghTFrc8Rvf3xnmK9lonlcdKd -l1Q726gjeqGVDd-HJOuZG3mVI%3D&url=fernet%3A%2F%2FgAAAAABp3lBYSlp-0iLBXhkwjEBP7H0CsbWVAuwBtwS -7ljqe3tqjSxYQMBWigwszfD8P50CIxP23Rcdxuasy1rAi_4FplF7jzq64zJL3QqrBfoYzbEN-pXK5XNHuZc0Uw0b1kE0ZQD3 vMxDYE8OOwNt-WD5nHw5BzkRMQDJ1AODU4rBl7V4yMZVMtLMWjFDtF4IlIZ2HfZn1S8tLckcOQucYbLzqRXNasMa6_3DFVa5uegRbtsHoJO7CiVHQ7LNdjdgxRPZP1qw5lX8gnV5beva0m078jo-_u4xRQHl10G7-oVP96ExCXOBeWvzeiMy2-rGbMBVGyFS" 
+                sandbox="allow-scripts allow-same-origin allow-top-navigation allow-downloads" 
+                allowTransparency="true" scrolling="no" 
+                frameborder="0" height="775px" width="100%">
+            </iframe>
+        </div>
     </div>
-<footer style="text-align: center; color: #7f8c8d; padding: 40px 20px; border-top: 1px solid #eee; margin-top: 40px; font-size: 0.9em;">
+
+    <footer style="text-align: center; color: #7f8c8d; padding: 40px 20px; border-top: 1px solid #eee; margin-top: 40px; font-size: 0.9em;">
         <p>&copy; 2026 - Gîte La Maisonnette - Saint-Jean de Laur</p>
         <p>
             <a href="index.html" style="color: #7f8c8d; margin-right: 15px;">Accueil</a>
@@ -46,21 +68,30 @@
         </p>
     </footer>
 
-    <div class="whatsapp-container" ... >
-        ...
-    </div>
+    <script>
+        function loadCalendar() {
+            const iframe = document.getElementById('open-web-calendar');
+            const btn = document.getElementById('unlock-trigger');
+            const wrapper = document.getElementById('wrapper');
+            
+            // On injecte la vraie URL
+            iframe.src = iframe.getAttribute('data-src');
+            
+            // On affiche l'iframe et on cache le bouton
+            iframe.style.display = 'block';
+            btn.style.display = 'none';
+            wrapper.style.background = 'white';
+        }
+    </script>
 
-</body>
-</html>
-  <div class="whatsapp-container" style="position:fixed; bottom:20px; right:20px; z-index:1000; display: flex; align-items: center; gap: 10px;">
-    
-    <span style="background-color: white; color: #2c3e50; padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #eee; pointer-events: none;">
-        Nous contacter par WhatsApp
-    </span>
-
-    <a href="https://wa.me/33603276091" target="_blank" style="width:60px; height:60px; background-color:#25d366; color:#FFF; border-radius:50%; text-align:center; font-size:35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
-        <i class="fab fa-whatsapp"></i> </a>
-</div> 
+    <div class="whatsapp-container" style="position:fixed; bottom:20px; right:20px; z-index:1000; display: flex; align-items: center; gap: 10px;">
+        <span style="background-color: white; color: #2c3e50; padding: 8px 15px; border-radius: 20px; font-weight: 600; font-size: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #eee; pointer-events: none;">
+            Nous contacter par WhatsApp
+        </span>
+        <a href="https://wa.me/33603276091" target="_blank" style="width:60px; height:60px; background-color:#25d366; color:#FFF; border-radius:50%; text-align:center; font-size:35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;">
+            <i class="fab fa-whatsapp"></i> 
+        </a>
+    </div> 
 
 </body>
 </html>
