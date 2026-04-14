@@ -23,14 +23,14 @@
 
     <h1>Mentions Légales & RGPD</h1>
 
-    <section>
-        <h2>1. Éditeur du site</h2>
-        <p>Le site <strong>gite-la-maisonnette-46260.fr</strong> est édité par :<br>
-        <strong>Erick Nuwendam</strong><br>
-        Adresse : 149, route de Cajarc, 46260 Saint-Jean de Laur<br>
-        Téléphone : 0603276091<br>
-        Email : lamaisonnette46260@outlook.fr</p>
-    </section>
+   <section>
+    <h2>1. Éditeur du site</h2>
+    <p>Le site <strong>gite-la-maisonnette-46260.fr</strong> est édité par :<br>
+    <strong>Erick Nuwendam</strong><br>
+    Adresse : 149, route de Cajarc, 46260 Saint-Jean de Laur<br>
+    Téléphone : <span id="tel-box">Chargement...</span><br>
+    Email : <span id="mail-box">Chargement...</span></p>
+</section>
 
     <section>
         <h2>2. Hébergement</h2>
@@ -65,5 +65,25 @@
 
     <a href="index.html" class="back-link">← Retour au site</a>
 
+<script>
+    (function() {
+        // Protection du téléphone
+        var t1 = "06";
+        var t2 = "03";
+        var t3 = "27";
+        var t4 = "60";
+        var t5 = "91";
+        document.getElementById('tel-box').textContent = t1 + " " + t2 + " " + t3 + " " + t4 + " " + t5;
+
+        // Protection de l'email
+        var user = "lamaisonnette46260";
+        var domain = "outlook.fr";
+        var fullMail = user + "@" + domain;
+        
+        // On crée un lien cliquable pour l'utilisateur
+        var mailElement = document.getElementById('mail-box');
+        mailElement.innerHTML = '<a href="mailto:' + fullMail + '" style="color: #2c3e50; text-decoration: none;">' + fullMail + '</a>';
+    })();
+</script>
 </body>
 </html>
