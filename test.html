@@ -55,12 +55,26 @@
 <script>
     let photoCount = 0;
 
-    function handleCredentialResponse(response) {
+   function handleCredentialResponse(response) {
+    // Décodage du jeton Google
+    const payload = JSON.parse(atob(response.credential.split('.')[1]));
+    
+    // VERIFICATION DE L'EMAIL
+    const monEmail = "erick.nuwendam@gmail.com"; // <--- REMPLACEZ ICI
+
+    if (payload.email === monEmail) {
+        alert("Bienvenue Erick ! Accès autorisé.");
         document.getElementById('auth-block').style.display = 'none';
         document.getElementById('admin-content').style.display = 'block';
-        // Ajouter 3 slots par défaut
-        for(let i=0; i<3; i++) addImageSlot();
+        
+        // On ajoute les slots par défaut
+        if (photoCount === 0) {
+            for(let i=0; i<3; i++) addImageSlot();
+        }
+    } else {
+        alert("Désolé, votre adresse (" + payload.email + ") n'est pas autorisée à administrer ce site.");
     }
+}
 
     function addImageSlot() {
         photoCount++;
