@@ -44,6 +44,14 @@
         }
         nav a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
 
+        /* Lien Invisible */
+        .hidden-link {
+            opacity: 0;
+            cursor: default;
+            text-decoration: none;
+            user-select: none;
+        }
+
         /* Section Hero (Bannière) */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.062), rgba(0, 0, 0, 0.055)), 
@@ -60,7 +68,7 @@
             padding: 0 20px;
         }
         .hero h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.1; }
-        .hero h1 span { font-size: 0.7em; opacity: 0.9; } /* Style pour la deuxième ligne du titre */
+        .hero h1 span { font-size: 0.7em; opacity: 0.9; } 
         .hero p { font-size: 1.2em; max-width: 600px; }
 
         .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
@@ -97,29 +105,25 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="canonical" href="https://gite-la-maisonnette-46260.fr/" />
-<script defer src="https://cloud.umami.is/script.js" data-website-id="3150cc0f-8575-457c-b101-eca4d8d3af6c"></script>
+    <link rel="canonical" href="https://gite-la-maisonnette-46260.fr/" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3150cc0f-8575-457c-b101-eca4d8d3af6c"></script>
 </head>
 <body>
 
     <nav>
         <a href="index.html" class="active">Le Gîte</a>
-       
         <a href="dispo.html">Disponibilités</a>
-
+        <a href="test.html" class="hidden-link">Test</a>
     </nav>
 
     <header class="hero">
         <img src="images/coquille.jpg" alt="Coquille Saint-Jacques" style="width: 80px; height: auto; opacity: 0.6; margin-bottom: 15px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
-        
         <h1>Maison de vacances<br><span>Gîte d'étape</span></h1>
         <p>Un séjour paisible au cœur des Causses du Lot, sur le chemin de Compostelle (GR65)</p>
-        
         <a href="dispo.html" class="cta-button">Vérifier les disponibilités</a>
     </header>
 
     <div class="container">
-        
         <section id="description" style="text-align: center;">
             <h2>Bienvenue à La Maisonnette</h2>
             <p>Maison de vacances et Gîte d'étape à Saint-Jean de Laur. En vacances, en randonnée ou en pélerinage sur le chemin de Compostelle, profitez d'un gîte tout confort, du jardin, de la piscine, pour un séjour apaisant dans le Quercy.</p>
@@ -241,10 +245,12 @@
         const dots = document.querySelectorAll('.dot');
 
         function updateCarousel() {
-            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
-            dots.forEach((dot, index) => {
-                dot.style.backgroundColor = (index === slideIndex) ? "white" : "rgba(255,255,255,0.5)";
-            });
+            if (slidesContainer) {
+                slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.style.backgroundColor = (index === slideIndex) ? "white" : "rgba(255,255,255,0.5)";
+                });
+            }
         }
 
         function moveSlide(n) {
