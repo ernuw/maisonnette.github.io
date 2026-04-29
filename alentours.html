@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>À découvrir - Gîte La Maisonnette - Lot & Aveyron</title>
+    <meta name="description" content="Découvrez les sites touristiques incontournables autour de Saint-Jean de Laur : Saint-Cirq-Lapopie, Pech Merle, Villefranche-de-Rouergue et plus encore.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Récupération exacte de tes variables index.html */
+        :root {
+            --primary: #2980b9;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            margin: 0; 
+            background-color: white;
+        }
+
+        /* Navigation identique à ton index */
+        nav { 
+            text-align: center; 
+            padding: 20px; 
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #7f8c8d; 
+            font-weight: 600; 
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--primary); }
+        nav a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        h1 { text-align: center; color: var(--dark); margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 40px; }
+
+        /* Style des cartes pour les lieux */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { 
+            background: var(--light); 
+            padding: 25px; 
+            border-radius: 15px; 
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .card h2 { color: var(--primary); margin-top: 0; font-size: 1.3em; border-bottom: 2px solid #fff; padding-bottom: 10px; }
+        .card p { font-size: 0.95em; color: #444; margin-bottom: 0; }
+
+        footer { text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.9em; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="3150cc0f-8575-457c-b101-eca4d8d3af6c"></script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Le Gîte</a>
+        <a href="dispo.html">Disponibilités</a>
+        <a href="alentours.html" class="active">Alentours</a>
+    </nav>
+
+    <div class="container">
+        <h1>Explorer la région</h1>
+        <p class="subtitle">Les pépites du Quercy et du Rouergue à découvrir durant votre séjour.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Saint-Cirq-Lapopie</h2>
+                <p>Élu l'un des plus beaux villages de France, ce joyau médiéval surplombe le Lot. Ses ruelles d'artistes et son château offrent un panorama spectaculaire sur la vallée.</p>
+            </div>
+
+            <div class="card">
+                <h2>Grotte du Pech Merle</h2>
+                <p>À Cabrerets, découvrez une grotte ornée exceptionnelle. Ses peintures rupestres de mammouths et de chevaux ponctués datent de plus de 25 000 ans.</p>
+            </div>
+
+            <div class="card">
+                <h2>Cajarc</h2>
+                <p>Une petite ville pleine de charme sur les rives du Lot. Connue pour son plan d'eau, ses festivals et son ambiance conviviale, elle est une étape phare du Quercy.</p>
+            </div>
+
+            <div class="card">
+                <h2>Gouffre de Lantouy</h2>
+                <p>Une résurgence mystérieuse aux eaux émeraude nichée dans la forêt. Un lieu paisible et légendaire, parfait pour une balade sauvage au frais.</p>
+            </div>
+
+            <div class="card">
+                <h2>Lac aux Oiseaux</h2>
+                <p>Situé à Martiel, c'est un havre de paix pour les promeneurs et les pêcheurs. Un site naturel protégé idéal pour observer la faune locale en toute sérénité.</p>
+            </div>
+
+            <div class="card">
+                <h2>Villefranche-de-Rouergue</h2>
+                <p>Cette bastide majestueuse possède l'un des plus beaux marchés de France le jeudi matin. Sa collégiale et ses places médiévales sont incontournables.</p>
+            </div>
+
+            <div class="card">
+                <h2>Abbaye de Loc-Dieu</h2>
+                <p>Une abbaye cistercienne fortifiée entourée d'un parc romantique. Un lieu chargé d'histoire offrant calme et fraîcheur, à quelques minutes du gîte.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 - Gîte La Maisonnette</p>
+        <p><a href="index.html" style="color: var(--primary); text-decoration: none;">Retour à l'accueil</a></p>
+    </footer>
+
+</body>
+</html>
